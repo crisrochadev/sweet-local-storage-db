@@ -5,7 +5,6 @@
 <p><i>A database system in Javascript, which uses localStorage to store data, in order to facilitate their persistence in processes and creation.<i></p>
 </center>
 
-
 ## Inicialize
 
 ```javascript
@@ -75,18 +74,34 @@ const table = db.updateTable("users", {
 const table = db.removeTable(<table-name>);
 
 ```
+
 ## CRUD
 
 ### Insert
 
 ```javascript
-
-const data = db.insert('<table-name>',{
-  name:"John Doe",
-  email:"jhon@doe.com",
-  password:"123456"
+const data = db.insert("<table-name>", {
+  name: "John Doe",
+  email: "jhon@doe.com",
+  password: "123456",
 });
+```
 
+or
+
+```javascript
+const data = db.insert("<table-name>", [
+  {
+    name: "John Doe",
+    email: "jhon@doe.com",
+    password: "123456",
+  },
+  {
+    name: "Doe John",
+    email: "email@email.com",
+    password: "654321",
+  },
+]);
 ```
 
 ### Update
@@ -98,6 +113,7 @@ const data = db.update('<table-name>',{<data>},'<find>','<condition>','<where>')
 const data = db.update('users',{password:'654321'},'$id','=',3);
 
 ```
+
 Sobre as Condições consulte a lista <a href="#conditions"> Conditions </a>
 
 ### Read (Get)
@@ -105,30 +121,23 @@ Sobre as Condições consulte a lista <a href="#conditions"> Conditions </a>
 #### Trazer todos os items
 
 ```javascript
-
-const data = db.get('users');
-
+const data = db.get("users");
 ```
+
 #### filtrar Busca
 
 ```javascript
+const data1 = db.find("<table-name>", "<find>", "<condition>", "<where>");
 
-const data1 = db.find('<table-name>','<find>','<condition>','<where>');
-
-
-const data1 = db.find('users','full-name','start','John');
-
+const data1 = db.find("users", "full-name", "start", "John");
 ```
+
 Sobre as Condições consulte a lista <a href="#conditions"> Conditions </a>
 
 ### Delete
 
 ```javascript
+const data1 = db.find("<table-name>", "<$id>", "<id>");
 
-const data1 = db.find('<table-name>','<$id>','<id>');
-
-
-const data = db.delete('clients','$id',2);
-
-
+const data = db.delete("clients", "$id", 2);
 ```
