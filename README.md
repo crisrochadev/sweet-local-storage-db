@@ -1,9 +1,16 @@
 # Local Storage DB
 
-<center>
-<img src="./assets/images/print.png" alt="Local Storage DB" title="Local Storage DB"/>
-<p><i>A database system in Javascript, which uses localStorage to store data, in order to facilitate their persistence in processes and creation.<i></p>
-</center>
+<table>
+  <tbody>
+    <tr>
+      <td><img src="./assets/images/logo.png" alt="Local Storage DB" title="Local Storage DB"/></td>
+      <td><b>A database system in Javascript, which uses localStorage to store data, in order to facilitate their persistence in processes and creation.</b></td>
+    </tr>
+  </tbody>
+</table>
+<br/>
+<hr/>
+<br/>
 
 ## Inicialize
 
@@ -11,13 +18,13 @@
 const db = new SweetLocalDB(<dbName>);
 ```
 
-### Verificar se o banco foi inicializado
+### Check if the database has been initialized
 
 ```javascript
 const isInit = db.dbHasBeenInitialized();
 ```
 
-### Criar Tabela
+### Create Table
 
 ```javascript
 
@@ -25,13 +32,13 @@ bd.createTable(<tableName>,<arrayColumnsName>);
 
 ```
 
-### Busque todas as Tabelas
+### Get all Tables
 
 ```javascript
 const tables = db.getAllTables();
 ```
 
-### Busque tabela pelo nome
+### get table by name
 
 ```javascript
 
@@ -39,7 +46,7 @@ const table = db.getTable(<table-name>);
 
 ```
 
-### Altere a tabela
+### update the table
 
 ```javascript
   const table = db.updateTable(<table-name>,{
@@ -67,7 +74,7 @@ const table = db.updateTable("users", {
 });
 ```
 
-### Exclua a tabela
+### delete the table
 
 ```javascript
 
@@ -114,17 +121,17 @@ const data = db.update('users',{password:'654321'},'$id','=',3);
 
 ```
 
-Sobre as Condições consulte a lista <a href="#conditions"> Conditions </a>
+<a href="#conditions"> Conditions </a>
 
 ### Read (Get)
 
-#### Trazer todos os items
+#### Get all items
 
 ```javascript
 const data = db.get("users");
 ```
 
-#### filtrar Busca
+#### Find by
 
 ```javascript
 const data1 = db.find("<table-name>", "<find>", "<condition>", "<where>");
@@ -132,7 +139,7 @@ const data1 = db.find("<table-name>", "<find>", "<condition>", "<where>");
 const data1 = db.find("users", "full-name", "start", "John");
 ```
 
-Sobre as Condições consulte a lista <a href="#conditions"> Conditions </a>
+About the Conditions see the list <a href="#conditions"> Conditions </a>
 
 ### Delete
 
@@ -141,3 +148,60 @@ const data1 = db.find("<table-name>", "<$id>", "<id>");
 
 const data = db.delete("clients", "$id", 2);
 ```
+
+## Contitions
+
+<div id='conditions'>
+<table>
+  <thead>
+    <tr>
+      <th>Condition</th>
+      <th>type</th>
+      <th>Description</th>
+    </tr>
+  <thead>
+  <tbody>
+    <tr>
+      <td>start</td>
+      <td style="color:blue">String</td>
+      <td>value starts with:</td>
+    </tr>
+     <tr>
+      <td>end</td>
+      <td style="color:blue">String</td>
+      <td>value ends with:</td>
+    </tr>
+     <tr>
+      <td>contain</td>
+      <td style="color:blue">String</td>
+      <td>value conatain {caractere}</td>
+    </tr>
+    <tr>
+      <td>></td>
+      <td style="color:blue">String</td>
+      <td>value greater than</td>
+    </tr>
+    <tr>
+      <td>>=</td>
+      <td style="color:blue">String</td>
+      <td>value greater than or equal to</td>
+    </tr>
+    <tr>
+      <td><</td>
+      <td style="color:blue">String</td>
+      <td>value less than </td>
+    </tr>
+    <tr>
+      <td><=</td>
+      <td style="color:blue">String</td>
+      <td>value less than or equal to</td>
+    </tr>
+    <tr>
+      <td>=</td>
+      <td style="color:blue">String</td>
+      <td>value equal to</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "sweet-local-storage-db",
+  "version": "1.0.1",
+  "description": "A database system in Javascript, which uses localStorage to store data, in order to facilitate their persistence in processes and creation.",
+  "main": "SweetLocalStorageDb.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crisrochadev/sweet-local-storage-db.git"
+  },
+  "keywords": [
+    "database",
+    "localStorage"
+  ],
+  "author": "crisrochadev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crisrochadev/sweet-local-storage-db/issues"
+  },
+  "homepage": "https://github.com/crisrochadev/sweet-local-storage-db#readme"
+}
